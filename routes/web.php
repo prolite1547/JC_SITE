@@ -17,4 +17,7 @@
 
 Route::get('/home', 'HomeController@index');
 Route::get('/job/details/{id}', 'HomeController@showJobDetails');
+Route::get('/import/json', 'JsonImportController@index');
+Route::post('/upload/json','JsonImportController@importFile')->name('import.json');
+
  

@@ -49630,6 +49630,36 @@ var cardController = function cardController() {
 
 /***/ }),
 
+/***/ "./resources/js/controllers/import_controller.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/controllers/import_controller.js ***!
+  \*******************************************************/
+/*! exports provided: importController */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "importController", function() { return importController; });
+var importController = function importController() {
+  $('.json_import_file').submit(function (e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+      url: '/upload/json',
+      method: 'POST',
+      data: formData,
+      success: function success(data) {
+        $('#json_content').val(data);
+      },
+      cache: false,
+      contentType: false,
+      processData: false
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/index.js":
 /*!*******************************!*\
   !*** ./resources/js/index.js ***!
@@ -49640,6 +49670,8 @@ var cardController = function cardController() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_card_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/card_controller */ "./resources/js/controllers/card_controller.js");
+/* harmony import */ var _controllers_import_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/import_controller */ "./resources/js/controllers/import_controller.js");
+
 
 $(document).ready(function () {
   $.ajaxSetup({
@@ -49647,12 +49679,17 @@ $(document).ready(function () {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  var home_route = new RegExp("\/", 'gm');
+  var home_route = new RegExp("\/home", 'gm');
+  var import_route = new RegExp("\/import/json", 'gm');
   var pathName = window.location.pathname;
 
   switch (true) {
     case home_route.test(pathName):
       Object(_controllers_card_controller__WEBPACK_IMPORTED_MODULE_0__["cardController"])();
+      break;
+
+    case import_route.test(pathName):
+      Object(_controllers_import_controller__WEBPACK_IMPORTED_MODULE_1__["importController"])();
       break;
 
     default:
@@ -49681,8 +49718,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
