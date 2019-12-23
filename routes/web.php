@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('screens.home');
+// });
+
+Route::get('/home', 'HomeController@index');
+Route::get('/job/details/{id}', 'HomeController@showJobDetails');
+ 

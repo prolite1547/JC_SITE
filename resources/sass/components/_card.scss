@@ -1,0 +1,11 @@
+.card{
+    &__body{
+        margin-top: 5px;
+        padding: 10px;
+        background-color: white;
+    }
+    &__body:hover{
+        background-color: $color-lynxwhite;
+        
+    }
+}
