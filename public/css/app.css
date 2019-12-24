@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Poppins:600,700&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap);@charset "UTF-8";
 
 .header-title {
   color: #ecf0f1;
@@ -10,6 +10,13 @@
   color: #2c3e50;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+}
+
+.job-detail-listing {
+  color: #2c3e50;
+  font-size: 14;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 .card__body {

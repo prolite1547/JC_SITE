@@ -14,8 +14,7 @@ class JsonImportController extends Controller
         $jsonFile = $request->json_upload;
         $contents = file_get_contents($jsonFile->getRealPath());
         $json_array = json_decode($contents, true); 
-        $concats = '';
-    
+        
         foreach($json_array as $json){
             $jobs = new Job;
             $jobs->job_title = $json['job_title'];
@@ -30,6 +29,6 @@ class JsonImportController extends Controller
             $jobs->save();
         }
 
-       return  'SUCCESS';
+       return  $contents;
     }
 }
