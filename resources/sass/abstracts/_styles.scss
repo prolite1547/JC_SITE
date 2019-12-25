@@ -15,6 +15,58 @@
     font-size: 14.0;
     font-family: $poppins-fontfamily;
     font-weight: 400;
+    &__location{
+        color: $color-midnight;
+        font-size: 14.0;
+        font-weight: 400;
+        font-family: $poppins-fontfamily;
+    }
+    &__salary{
+        color: $color-midnight;
+        font-size: 14.0;
+        font-weight: 600;
+        font-family: $poppins-fontfamily;
+    }
+    &__posted{
+        color: $color-americanriver;
+        font-size: 14.0;
+        font-weight: 600;
+        font-family: $poppins-fontfamily;
+    }
 }
 
- 
+.box-shadowed{
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        box-shadow: 3px 3px 2px #95a5a6;
+}
+
+
+
+.job-title{
+    color: $color-midnight;
+    font-family: $poppins-fontfamily;
+    font-size: 18.0;
+    font-weight: 600;
+}
+
+.description{
+    color: $color-midnight;
+    font-size: 14.0;
+    font-family: $poppins-fontfamily;
+    font-weight: 400;
+}
+
+.sub-header{
+    color: $color-midnight;
+    font-size: 14.0;
+    font-weight: 600;
+    font-family: $poppins-fontfamily;
+}
+
+.div-footer{
+    margin-top: 50px;
+    background-color: $color-midnight;
+    padding: 10px;
+}

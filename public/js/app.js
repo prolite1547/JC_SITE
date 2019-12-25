@@ -49607,7 +49607,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardController", function() { return cardController; });
 var cardController = function cardController() {
-  $(window).scroll(loadMore);
+  $('#search-job').on('keypress', function (e) {
+    var search = $(e.currentTarget).val();
+
+    if (e.which == 13) {
+      $.get("/home/".concat(search), function (data) {
+        $('.job-list').html(data.jobs);
+        $('.endless-pagination').data('next-page', data.next_page);
+      });
+    }
+  }); //    $(window).scroll(loadMore);
 
   function loadMore() {
     var page = $('.endless-pagination').data('next-page');
@@ -49648,6 +49657,9 @@ var importController = function importController() {
       url: '/upload/json',
       method: 'POST',
       data: formData,
+      beforeSend: function beforeSend() {
+        $('#json_content').val("FETCHING DATA .........");
+      },
       success: function success(data) {
         $('#json_content').val(data);
       },
@@ -49718,8 +49730,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -15,7 +15,8 @@
 //     return view('screens.home');
 // });
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{s}', 'HomeController@index');
 Route::get('/job/details/{id}', 'HomeController@showJobDetails');
 Route::get('/import/json', 'JsonImportController@index');
 Route::post('/upload/json','JsonImportController@importFile')->name('import.json');

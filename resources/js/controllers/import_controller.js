@@ -6,6 +6,9 @@ export const importController = () =>{
             url: '/upload/json',
             method: 'POST',
             data: formData,
+            beforeSend: function(){
+                $('#json_content').val("FETCHING DATA .........");
+            },
             success : function(data){
                 $('#json_content').val(data);
             },

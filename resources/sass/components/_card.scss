@@ -1,11 +1,33 @@
 .card{
     &__body{
-        margin-top: 5px;
-        padding: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
         background-color: white;
+        box-shadow: 3px 3px 2px #95a5a6;
+    }
+    &__body_2{
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: white;
+        box-shadow: 3px 3px 2px #95a5a6;
+    }
+    &__body_side{
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: white;
+        box-shadow: 3px 3px 2px #95a5a6;
     }
     &__body:hover{
-        background-color: $color-lynxwhite;
+        background-color: #ecf0f1;
+      
         
+        // box-shadow: 5px 5px 2px grey;
     }
+    
+}
+
+.search-card{
+    background-color: white;
+    padding: 5px;
+    box-shadow: 3px 3px 2px #95a5a6;
 }

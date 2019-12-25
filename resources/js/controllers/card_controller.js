@@ -1,6 +1,15 @@
 export const cardController = () => {
 
-   $(window).scroll(loadMore);
+ $('#search-job').on('keypress',(e)=>{
+    let search = $(e.currentTarget).val();
+    if(e.which == 13){
+      $.get(`/home/${search}`, (data)=>{
+        $('.job-list').html(data.jobs);
+        $('.endless-pagination').data('next-page', data.next_page);
+      });
+    }
+ });
+//    $(window).scroll(loadMore);
     function loadMore(){
           let page = $('.endless-pagination').data('next-page');
           if(page != null){
