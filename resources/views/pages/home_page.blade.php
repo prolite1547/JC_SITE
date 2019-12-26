@@ -4,10 +4,7 @@
      <div class="container-fluid">
           <div class="row mt-2">
                <div class="col-md-9">
-                    
-                    
                     <section class="job-list endless-pagination" data-next-page="{{ $jobs->nextPageUrl() }}">
-
                               @foreach ($jobs as $job)
                               <a href="{{ URL::to('/job')}}/details/{{$job->id}}" target="_about" style="text-decoration: none;">
                                    <div class="card card-clickable mt-2" data-id="{{ $job->id  }}">
@@ -32,7 +29,6 @@
                                    </div>
                               </a>
                               @endforeach
-                      
                     </section>
                </div>
                <div class="col-md-3">
