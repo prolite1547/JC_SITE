@@ -2,11 +2,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-10">
-                {{-- <a class="navbar-brand" href="{{ route('home') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="{{ asset('images/app_icon.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
                     <span class="header-title">Jobs Corner</span>
                     <p style="color: white;" class="description">UAE Dubai job search engine site.</p>
-                </a> --}}
+                </a>
                 <ul class="nav social-media mt-3">
                     <li class="px-2">
                         <a href="#">

@@ -66,15 +66,16 @@
  
 
 .job-list{
-    min-height: 600px;
+    min-height: 1000px;
 }
 
 .main-container{
-    min-height: 600px;
+    min-height: 1000px;
 }
+ 
 
 .footer{
-    margin-top: 50px;
+    margin-top: 75px;
     background-color: $color-midnight;
 }
 
@@ -83,4 +84,13 @@
     font-weight: 600;
     color: $color-clouds;
 }
+
+.btn-search:hover{
+    background-color: $color-pumpkin ;
+}
+
+#search-job:focus{
+    outline-color: $color-pumpkin;
+}
+
 

@@ -23,7 +23,7 @@
     </div>
     <div class="row">
         <div class="col-md-9">
-          <div class="card mt-1">
+          <div class="card mt-1 job-overview-card">
               <div class="card-body card__body_2">
                   <h5>Job Overview</h5>
                   <span class="sub-header">{{ $job->job_type }} Job</span><br><br>

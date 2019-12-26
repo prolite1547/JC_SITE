@@ -14,7 +14,7 @@
         body{
             background-color: #ecf0f1 !important;
             height: 100%;
-            padding: 0;
+            padding-top: 60px;
             margin: 0;
         }
     </style>

@@ -3122,15 +3122,15 @@
 }
 
 .job-list {
-  min-height: 600px;
+  min-height: 1000px;
 }
 
 .main-container {
-  min-height: 600px;
+  min-height: 1000px;
 }
 
 .footer {
-  margin-top: 50px;
+  margin-top: 75px;
   background-color: #2c3e50;
 }
 
@@ -3138,6 +3138,14 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #ecf0f1;
+}
+
+.btn-search:hover {
+  background-color: #d35400;
+}
+
+#search-job:focus {
+  outline-color: #d35400;
 }
 
 .card__body {

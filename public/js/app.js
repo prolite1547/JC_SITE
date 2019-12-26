@@ -49610,13 +49610,24 @@ var cardController = function cardController() {
   $('#search-job').on('keypress', function (e) {
     var search = $(e.currentTarget).val();
 
-    if (e.which == 13) {
-      $.get("/home/".concat(search), function (data) {
-        $('.job-list').html(data.jobs);
-        $('.endless-pagination').data('next-page', data.next_page);
-      });
+    if (search == '') {
+      search = 'all';
     }
-  }); //    $(window).scroll(loadMore);
+
+    if (e.which == 13) {
+      filterCards(search);
+    }
+  });
+  $('.btn-search').on('click', function () {
+    var txtsearch = $('#search-job').val();
+
+    if (txtsearch == '') {
+      search = 'all';
+    }
+
+    filterCards(txtsearch);
+  });
+  $(window).scroll(loadMore);
 
   function loadMore() {
     var page = $('.endless-pagination').data('next-page');
@@ -49634,6 +49645,13 @@ var cardController = function cardController() {
         }
       }, 350));
     }
+  }
+
+  function filterCards(search) {
+    $.get("/home/".concat(search), function (data) {
+      $('.job-list').html(data.jobs);
+      $('.endless-pagination').data('next-page', data.next_page);
+    });
   }
 };
 

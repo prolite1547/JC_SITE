@@ -12,7 +12,11 @@ class HomeController extends Controller
    public function index(Request $request){
       if(isset($request->s)){
          $search = $request->s;
-         $jobs = Job::where('job_title', 'like', '%'.$search.'%')->latest('created_at')->paginate($this->per_page);
+         if($search != 'all'){
+            $jobs = Job::where('job_title', 'like', '%'.$search.'%')->latest('created_at')->paginate($this->per_page);
+         }else{
+            $jobs = Job::latest('created_at')->paginate($this->per_page);
+         }
          return [
             'jobs' => view('ajax_contents.job_card')->with(compact('jobs'))->render(),
             'next_page' => $jobs->nextPageUrl()

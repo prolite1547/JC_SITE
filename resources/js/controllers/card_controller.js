@@ -2,14 +2,25 @@ export const cardController = () => {
 
  $('#search-job').on('keypress',(e)=>{
     let search = $(e.currentTarget).val();
+    if(search == ''){
+      search = 'all';
+    }
     if(e.which == 13){
-      $.get(`/home/${search}`, (data)=>{
-        $('.job-list').html(data.jobs);
-        $('.endless-pagination').data('next-page', data.next_page);
-      });
+      filterCards(search);
     }
  });
-//    $(window).scroll(loadMore);
+
+ $('.btn-search').on('click',()=>{
+    let txtsearch = $('#search-job').val();
+    if(txtsearch == ''){
+      search = 'all';
+    }
+    filterCards(txtsearch)
+ });
+
+
+
+   $(window).scroll(loadMore);
     function loadMore(){
           let page = $('.endless-pagination').data('next-page');
           if(page != null){
@@ -25,9 +36,13 @@ export const cardController = () => {
               }, 350));
 
           }
+    }
 
-      
-        
+    function filterCards(search){
+      $.get(`/home/${search}`, (data)=>{
+        $('.job-list').html(data.jobs);
+        $('.endless-pagination').data('next-page', data.next_page);
+      });
     }
 
    
