@@ -3121,9 +3121,23 @@
   font-family: "Poppins", sans-serif;
 }
 
+.job-list {
+  min-height: 600px;
+}
+
+.main-container {
+  min-height: 600px;
+}
+
 .footer {
   margin-top: 50px;
   background-color: #2c3e50;
+}
+
+.social-media li > a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #ecf0f1;
 }
 
 .card__body {

@@ -41,9 +41,7 @@
         background-color: white;
         box-shadow: 3px 3px 2px #95a5a6;
 }
-
-
-
+ 
 .job-title{
     color: $color-midnight;
     font-family: $poppins-fontfamily;
@@ -65,8 +63,24 @@
     font-family: $poppins-fontfamily;
 }
 
+ 
+
+.job-list{
+    min-height: 600px;
+}
+
+.main-container{
+    min-height: 600px;
+}
+
 .footer{
     margin-top: 50px;
     background-color: $color-midnight;
-    
 }
+
+.social-media li>a{
+    font-family: $poppins-fontfamily;
+    font-weight: 600;
+    color: $color-clouds;
+}
+

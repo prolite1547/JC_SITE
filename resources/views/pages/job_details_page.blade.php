@@ -1,7 +1,7 @@
 @extends('main_layout')
 @section('title', 'Job Details') 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid main-container">
     <div class="row mt-2">
        <div class="col-md-12">
         <div class="card">

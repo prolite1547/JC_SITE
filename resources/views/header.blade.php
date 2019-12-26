@@ -6,5 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title') - Jobs Corner</title>
+    
+    <style>
+        html {
+            height: 100%;
+        }
+        body{
+            background-color: #ecf0f1 !important;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
  
