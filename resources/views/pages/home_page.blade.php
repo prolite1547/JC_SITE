@@ -4,6 +4,9 @@
      <div class="container-fluid">
           <div class="row mt-2">
                <div class="col-md-9">
+                    <section class="filter">
+                         <span class="filter-text">filter</span>
+                    </section>
                     <section class="job-list endless-pagination" data-next-page="{{ $jobs->nextPageUrl() }}">
                               @foreach ($jobs as $job)
                               <a href="{{ URL::to('/job')}}/details/{{$job->id}}" target="_about" style="text-decoration: none;">
@@ -29,6 +32,9 @@
                                    </div>
                               </a>
                               @endforeach
+                              <div class="loader" style="text-align: center;">
+                                   <div class="lds-facebook"><div></div><div></div><div></div></div>
+                              </div>
                     </section>
                </div>
                <div class="col-md-3">

@@ -49607,15 +49607,37 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardController", function() { return cardController; });
 var cardController = function cardController() {
+  // ONLY FOR GOOGLE CHROME USERSSSSS
+  // $('input[type=search]').on('search', function (e) {
+  //   let search = $(e.currentTarget).val();
+  //   if(search == ''){
+  //       search = 'all';
+  //       $('.filter').css('display','none');
+  //       $('.filter-text').html('');
+  //   }else{
+  //       $('.filter').css('display','block');
+  //       $('.filter-text').html(search);
+  //   }
+  //     filterCards(search);
+  //     $("html, body").animate({ scrollTop: 0 }, "slow");
+  // });
   $('#search-job').on('keypress', function (e) {
     var search = $(e.currentTarget).val();
 
-    if (search == '') {
-      search = 'all';
-    }
-
     if (e.which == 13) {
+      if (search == '') {
+        search = 'all';
+        $('.filter').css('display', 'none');
+        $('.filter-text').html('');
+      } else {
+        $('.filter').css('display', 'block');
+        $('.filter-text').html(search);
+      }
+
       filterCards(search);
+      $("html, body").animate({
+        scrollTop: 0
+      }, "slow");
     }
   });
   $('.btn-search').on('click', function () {
@@ -49638,10 +49660,22 @@ var cardController = function cardController() {
         var scroll_position_load_post = $(window).height() + $(window).scrollTop() + 100;
 
         if (scroll_position_load_post >= $(document).height()) {
-          $.get(page, function (data) {
-            $('.job-list').append(data.jobs);
-            $('.endless-pagination').data('next-page', data.next_page);
-          });
+          $.ajax(page, {
+            type: 'GET',
+            data: '',
+            beforeSend: function beforeSend() {
+              $('.loader').insertAfter('.job-list');
+              $('.loader').css('display', 'block');
+            },
+            success: function success(data) {
+              $('.loader').css('display', 'none');
+              $('.job-list').append(data.jobs);
+              $('.endless-pagination').data('next-page', data.next_page);
+            }
+          }); // $.get(page, function(data){
+          //      $('.job-list').append(data.jobs);
+          //      $('.endless-pagination').data('next-page', data.next_page);
+          // });
         }
       }, 350));
     }
@@ -49748,8 +49782,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! z:\xampp\htdocs\jobs_corner\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\JC_SITE\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

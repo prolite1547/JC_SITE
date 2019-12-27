@@ -1,12 +1,32 @@
 export const cardController = () => {
 
+  // ONLY FOR GOOGLE CHROME USERSSSSS
+// $('input[type=search]').on('search', function (e) {
+//   let search = $(e.currentTarget).val();
+//   if(search == ''){
+//       search = 'all';
+//       $('.filter').css('display','none');
+//       $('.filter-text').html('');
+//   }else{
+//       $('.filter').css('display','block');
+//       $('.filter-text').html(search);
+//   }
+//     filterCards(search);
+//     $("html, body").animate({ scrollTop: 0 }, "slow");
+// });
  $('#search-job').on('keypress',(e)=>{
     let search = $(e.currentTarget).val();
-    if(search == ''){
-      search = 'all';
-    }
     if(e.which == 13){
+      if(search == ''){
+        search = 'all';
+        $('.filter').css('display','none');
+        $('.filter-text').html('');
+      }else{
+        $('.filter').css('display','block');
+        $('.filter-text').html(search);
+      }
       filterCards(search);
+      $("html, body").animate({ scrollTop: 0 }, "slow");
     }
  });
 
@@ -28,10 +48,24 @@ export const cardController = () => {
               $.data(this, "scrollCheck", setTimeout(function(){
                 var scroll_position_load_post = $(window).height() + $(window).scrollTop() + 100;
                 if(scroll_position_load_post >= $(document).height()){
-                    $.get(page, function(data){
-                         $('.job-list').append(data.jobs);
-                         $('.endless-pagination').data('next-page', data.next_page);
+
+                    $.ajax(page, {
+                      type: 'GET',
+                      data : '',
+                      beforeSend: () =>{
+                          $('.loader').insertAfter('.job-list');
+                          $('.loader').css('display', 'block');
+                      },
+                      success : (data)=>{
+                        $('.loader').css('display', 'none');
+                        $('.job-list').append(data.jobs);
+                        $('.endless-pagination').data('next-page', data.next_page);
+                      }
                     });
+                    // $.get(page, function(data){
+                    //      $('.job-list').append(data.jobs);
+                    //      $('.endless-pagination').data('next-page', data.next_page);
+                    // });
                 }
               }, 350));
 

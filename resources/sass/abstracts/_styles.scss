@@ -4,6 +4,18 @@
     font-weight: 700;
 }
 
+.filter{
+    display: none;
+}
+.filter-text{
+    font-family: $poppins-fontfamily;
+    font-weight: 400;
+    background-color: $color-alzarin;
+    color: $color-clouds;
+    padding: 3px 10px;
+    border-radius: 30px;
+}
+
 .job-title-listing{
     color: $color-midnight;
     font-family: $poppins-fontfamily;
